@@ -1,0 +1,63 @@
+@import url(https://fonts.googleapis.com/css?family=Inconsolata);
+
+.newsItem {
+  display: flex;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.associatedPic {
+  object-fit: cover;
+  overflow: hidden;
+  background: center repeat;
+  border-radius: 3px;
+}
+
+.headline p, .source p, .storyBody p {
+  margin: 4px;
+  color: #D3D3D3;
+  font-family: Inconsolata;
+}
+
+.details {
+  background: #2F4F4F;
+  position: relative;
+  border-radius: 3px;
+  margin: 5px 10px;
+  width: 98%;
+  text-align: left;
+}
+
+.headline, .source, .storyBody {
+  margin-bottom: 10px;
+}
+
+.sourceTag {
+  color: #FF00FF,
+}
+
+.source {
+  display: flex;
+  float: right;
+  margin-right: .5%;
+  /* margin-top: 1.7%; */
+  margin-bottom: .5%;
+}
+
+.headline {
+  font-weight: bold;
+}
+
+.container {
+  position: relative;
+  border: px solid purple;
+  display: inline-block;
+  margin: 5px 0px 5px 10px;
+}
+
+.container img {
+  position: relative;
+  float: right;
+  width: 170px;
+  height: 130px;
+}

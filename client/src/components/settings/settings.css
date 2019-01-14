@@ -1,0 +1,80 @@
+@import url(https://fonts.googleapis.com/css?family=Inconsolata);
+
+.filterSources {
+  color: #FF4500;
+  text-align: center;
+  width: 10%;
+  margin-left: .4%;
+  margin-top: 5.1%;
+  margin-bottom: .3%;
+  display: flex;
+  font-size: 20px;
+  font-family: Inconsolata;
+}
+
+.sourceList {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: visible;
+  align-items: flex-start;
+  float: left;
+  margin-top: .7%
+}
+
+.filterAndNext {
+  display: flex;
+  margin-top: 0%;
+}
+
+.next {
+  float: right;
+  position: fixed;
+  top: 12.65%;
+  right: .4%;
+  width: 15%;
+  cursor: pointer;
+  color: #FF4500;
+  padding: 15px 26px;
+  font-family: Inconsolata;
+  border-radius: 2px;
+  background-color: #000;
+  border: 1px solid #FF4500;
+  font-size: 16px;
+
+}
+
+.sourceButtonA {
+  color: #20C20E;
+  border: 1px solid #20C20E;
+  background-color: #000;
+  cursor: pointer;
+
+}
+
+.sourceButtonB {
+  color: #FF00FF;
+  border: 1px solid #FF00FF;
+}
+
+.sourceButtonA, .sourceButtonB {
+  font-family: Inconsolata;
+  margin: 10px;
+  background-color: #000;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 2px;
+  display: flex;
+  flex-grow: 100;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.sourceButtonB:active, {
+  background-color: #20C20E;
+  color: white;
+}
+
+.sourceButtonB:hover,  {
+  background-color: #36454f;
+}

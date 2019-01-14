@@ -1,0 +1,48 @@
+.navbar {
+  position: fixed;
+  background-color: #000000;
+  overflow: hidden;
+  width: 100%;
+  border-bottom: 2px solid #20C20E;
+  margin-bottom: 1.5%;
+}
+
+#toggleSettings {
+  display: none;
+}
+
+.settingsSwitch {
+  float: right;
+  position:absolute;
+  top: 0px;
+  right: 0px;
+  height: 35px;
+  color: #20C20E;
+  cursor: pointer;
+  padding: 15px 26px;
+}
+
+.active, .about {
+  height: 35px;
+  float: left;
+}
+
+.navbar .active,.about {
+  color: #20C20E;
+  text-decoration: none;
+  padding: 15px 26px;
+}
+
+.navbar .active:hover, .about:hover, .settingsSwitch:hover {
+  background-color: #36454f;
+  color: #20C20E;
+}
+
+.navbar .active:active, .about:active, .settingsSwitch:active {
+  background-color: #20C20E;
+  color: white;
+}
+
+.container {
+  float: right;
+}

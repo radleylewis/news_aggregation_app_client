@@ -1,0 +1,51 @@
+@import url(https://fonts.googleapis.com/css?family=Inconsolata);
+
+.createAccountSlab {
+  text-align: center;
+  border: 2px solid #20C20E;
+  width: 30%;
+  top: 20%;
+  right: 35%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  border-radius: 2px;
+}
+
+.createAccountSlab p {
+  color: white;
+}
+
+.new_email, .new_surname, .new_password, .new_username, .new_firstName {
+  margin-top: 20px;
+  color: #FF00FF;
+  font-size: 16px;
+  font-family: Inconsolata;
+  outline: none;
+}
+
+.newUserSettingsButton {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  padding: 5px 0px;
+  cursor: pointer;
+  color: purple;
+  width: 50%;
+  border: 2px solid #20C20E;
+  border-radius: 2px;
+  background: black;
+  font-family: Inconsolata;
+  color: white;
+  font-weight: bold;
+  outline: none;
+}
+
+.newUserSettingsButton:hover {
+  background-color: #36454f;
+  color: #20C20E;
+}
+
+.newUserSettingsButton:active {
+  background-color: #20C20E;
+  color: white;
+}
