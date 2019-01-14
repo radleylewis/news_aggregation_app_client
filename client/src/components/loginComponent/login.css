@@ -74,3 +74,30 @@ input {
   background-color: #20C20E;
   color: white;
 }
+
+.logoutButton {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  padding: 5px 0px;
+  cursor: pointer;
+  color: purple;
+  width: 50%;
+  border: 2px solid #20C20E;
+  border-radius: 2px;
+  background: black;
+  font-family: Inconsolata;
+  color: white;
+  font-weight: bold;
+  outline: none;
+  margin-left: 25%;
+}
+
+.logoutButton:hover {
+  background-color: #36454f;
+  color: #20C20E;
+}
+
+.logoutButton:active {
+  background-color: #20C20E;
+  color: white;
+}

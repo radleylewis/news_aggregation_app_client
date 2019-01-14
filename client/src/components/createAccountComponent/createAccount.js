@@ -1,13 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { userLogin } from '../../reducer/reducerActions.js';
-import './createAccount.css';
 
+import './createAccount.css';
 import logo from '../../icons/newspaper.svg';
 
 const baseURL = 'http://127.0.0.1:3001/';
 
 class CreateAccount extends Component {
+
+  login = (username, password) => {
+    const authHeader = 'Basic ' + new Buffer(username + ':' + password).toString('base64');
+    fetch(baseURL + 'sign-in' , {
+      method: 'GET',
+      headers: new Headers({
+        'Authorization': authHeader,
+        'Content-Type': { 'Content-Type': 'application/json' },
+      })
+    })
+    .then(res => res.json())
+    .then(data => this.props.userLogin(data))
+    .catch(error => console.error('Error :( ', error));
+  }
 
   addUser = (userInfo) => {
     fetch(baseURL + 'addUser', {
@@ -22,9 +36,10 @@ class CreateAccount extends Component {
         "preferences": userInfo.preferences,
       })
     })
-    .then(this.props.userLogin(userInfo))
+    .then(this.login(userInfo.username, userInfo.password))
     .then(this.props.history.push('/settings'));
   }
+  // .then(this.props.userLogin(userInfo))
 
   state = {
     username: '',

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { selectedSources } from '../../reducer/reducerActions.js';
-import './settings.css';
+import './newsSources.css';
 
 const baseURL = 'http://127.0.0.1:3001/';
 
@@ -24,16 +24,20 @@ class NewsSources extends Component {
   }
 
   updateSources = (favourites) => {
-    fetch(baseURL + 'user-source', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        username: this.props.username,
-        sources: favourites,
+    if (this.props.newsSources) {
+      fetch(baseURL + 'user-source', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          username: this.props.username,
+          sources: favourites,
+        })
       })
-    })
-    .then(this.props.selectedSources(favourites))
-    .then(this.props.history.push('/frontPage'));
+      .then(this.props.selectedSources(favourites))
+      .then(this.props.history.push('/frontPage'));
+    } else {
+      
+    }
   }
 
   render() {

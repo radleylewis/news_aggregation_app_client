@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import { userLogin } from '../../reducer/reducerActions.js';
+import { userLogin, userLogout } from '../../reducer/reducerActions.js';
 import { connect } from 'react-redux';
 
 import logo from '../../icons/newspaper.svg';
@@ -38,13 +38,19 @@ class Login extends Component {
     this.props.history.push('/frontPage');
   }
 
+  handleLogout = () => {
+    this.props.userLogout();
+    this.props.history.push('/');
+  }
+
   render() {
     if(this.props.loggedIn) {
       return (
         <div>
           <div className="loginSlab">
             <img src={logo} alt="this should be a logo" height="100" width="100" className="logo" />
-            <p>Hi { this.props.firstname }, you're already logged in. Log out?</p>
+            <p>Hi { this.props.firstname }, you're already logged in.</p>
+            <button className="logoutButton" onClick={ this.handleLogout }>Log out</button>
           </div>
         </div>
       )
@@ -80,6 +86,7 @@ const mapStateToProps = (state) =>({
 
 const mapDispatchToProps = (dispatch) => ({
   userLogin: (userData) => dispatch(userLogin(userData)),
+  userLogout: () => dispatch(userLogout()),
 });
 
 export default connect(

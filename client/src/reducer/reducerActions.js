@@ -3,6 +3,10 @@ export const deploySources = (sourceList) => ({
   sourceList,
 })
 
+export const userLogout = () => ({
+  type: 'LOG_OUT',
+})
+
 export const userLogin = (userData) => ({
   type: 'USER_LOGIN',
   userData,

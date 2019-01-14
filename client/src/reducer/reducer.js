@@ -27,6 +27,8 @@ const reducer = (state=initialState, action) => {
         userPreferences: action.userData.preferences,
         stories: action.userData.stories,
       }
+    case 'LOG_OUT':
+      return {...initialState}
     default:
       return state;
   }
