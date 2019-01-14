@@ -3,9 +3,9 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import './navbar.css';
-import settingsLogo from '../icons/settings.svg';
-import homeLogo from '../icons/home.svg';
-import infoLogo from '../icons/infoLogo.svg';
+import settingsLogo from '../../icons/settings.svg';
+import homeLogo from '../../icons/home.svg';
+import infoLogo from '../../icons/infoLogo.svg';
 
 class Navbar extends Component {
   render() {

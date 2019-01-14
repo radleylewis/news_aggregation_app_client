@@ -1,4 +1,5 @@
 const initialState = {
+  loggedIn: false,
   stories: [],
   username: '',
   userEmail: '',
@@ -18,6 +19,7 @@ const reducer = (state=initialState, action) => {
       return {...state, userPreferences: action.favourites};
     case 'USER_LOGIN':
       return {...state,
+        loggedIn: true,
         username: action.userData.username,
         userEmail: action.userData.email,
         userFirstname: action.userData.firstname,

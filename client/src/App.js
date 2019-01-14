@@ -5,12 +5,12 @@ import './App.css';
 import { deploySources } from './reducer/reducerActions.js';
 import { connect } from 'react-redux';
 
-import Login from './components/login.js'
-import About from './components/about.js';
-import Preferences from './components/preferences.js';
-import FrontPage from './components/frontPage.js';
-import CreateAccount from './components/createAccount.js';
-import Navbar from './components/navbar.js';
+import Login from './components/loginComponent/login.js'
+import About from './components/aboutComponent/about.js';
+import Preferences from './components/preferencesComponent/preferences.js';
+import FrontPage from './components/frontPageComponent/frontPage.js';
+import CreateAccount from './components/createAccountComponent/createAccount.js';
+import Navbar from './components/navbarComponent/navbar.js';
 
 const baseURL = 'http://localhost:3001/';
 const reqSources = new Request(baseURL + 'deploySources');

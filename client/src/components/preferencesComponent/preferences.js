@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NewsSources from './settings/newsSources.js';
+import NewsSources from '../newsSourceComponent/newsSources.js';
 import { connect } from 'react-redux';
 import './preferences.css';
 
