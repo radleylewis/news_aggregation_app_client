@@ -4,7 +4,7 @@ import { userLogin } from '../reducer/reducerActions.js';
 
 import './login.css';
 import { connect } from 'react-redux';
-import logo from './newspaper.svg';
+import logo from '../icons/newspaper.svg';
 
 const baseURL = 'http://127.0.0.1:3001/';
 
