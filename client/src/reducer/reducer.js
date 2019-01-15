@@ -7,6 +7,7 @@ const initialState = {
   userSurname: '',
   userPreferences: [],
   newsSources: [],
+  fakeData: [],
 }
 
 const reducer = (state=initialState, action) => {
@@ -28,7 +29,7 @@ const reducer = (state=initialState, action) => {
         stories: action.userData.stories,
       }
     case 'LOG_OUT':
-      return {...initialState}
+      return {...initialState, newsSources: state.newsSources}
     default:
       return state;
   }

@@ -1,0 +1,17 @@
+@import url(https://fonts.googleapis.com/css?family=Inconsolata);
+
+.fakeHeader {
+  margin-top: 100px;
+  font-family: Inconsolata;
+  font-size: 20px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  color: #20C20E;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0px;
+  margin-left: 30%;
+  border: 1px solid #20C20E;
+  background: black;
+  border-radius: 3px;
+}

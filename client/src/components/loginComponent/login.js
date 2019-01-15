@@ -43,6 +43,10 @@ class Login extends Component {
     this.props.history.push('/');
   }
 
+  backToNews = () => {
+    this.props.history.push('/frontPage');
+  }
+
   render() {
     if(this.props.loggedIn) {
       return (
@@ -50,6 +54,7 @@ class Login extends Component {
           <div className="loginSlab">
             <img src={logo} alt="this should be a logo" height="100" width="100" className="logo" />
             <p>Hi { this.props.firstname }, you're already logged in.</p>
+            <button className="backToNews" onClick={ this.backToNews }>Back to news</button>
             <button className="logoutButton" onClick={ this.handleLogout }>Log out</button>
           </div>
         </div>

@@ -1,11 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './frontPage.css';
+import fakeNewsFlag from '../../icons/flag.svg';
+import twitterLogo from '../../icons/twitterLogo.svg';
+const moment = require('moment');
+
+const baseURL = 'http://127.0.0.1:3001/';
 
 class FrontPage extends Component {
 
   state = {
     userArticles: [],
+  }
+
+  fakeNews = (source) => {
+    fetch(baseURL + 'faker', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        fakeNews: source,
+      })
+    })
+    .then(alert('Potential fake news noted'))
   }
 
   render() {
@@ -29,12 +45,19 @@ class FrontPage extends Component {
           <div className="details">
             <div className="headline">
               <p>{story.title.toUpperCase().split(' - ')[0]}</p>
+              <p className="publishedAt">{moment(story.publishedAt).fromNow()}</p>
             </div>
             <div className="storyBody">
               <p>{story.content || story.description}</p>
             </div>
             <div className="source">
-              <p className="sourceTag">source: </p><p className="sourceName">{story.source.name.toUpperCase()}</p>
+              <div className="options">
+                <a><img className="shareTwitter" src={ twitterLogo } width='20' height='20'alt=""/></a>
+                <a onClick={() => {this.fakeNews(story.source.name)} }><img className="fakeNewsFlag" src={ fakeNewsFlag }   width='20' height='20'alt=""/></a>
+                <div>
+                  <p className="sourceName">source: {story.source.name.toUpperCase()}</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

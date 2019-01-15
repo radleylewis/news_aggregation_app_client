@@ -10,27 +10,29 @@
   display: flex;
   font-size: 20px;
   font-family: Inconsolata;
+  font-size: 20px;
+  color: white;
 }
 
 .sourceList {
   display: flex;
   flex-wrap: wrap;
-  overflow: visible;
   align-items: flex-start;
   float: left;
-  margin-top: .7%
+  margin-top: .7%;
+  width: 100%;
 }
 
 .filterAndNext {
   display: flex;
-  margin-top: 0%;
+  padding-top: 80px;
+  padding-left: 10px;
+  padding-right: 10px;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .next {
-  float: right;
-  position: fixed;
-  top: 12.65%;
-  right: .4%;
   width: 15%;
   cursor: pointer;
   color: #FF4500;
@@ -40,7 +42,18 @@
   background-color: #000;
   border: 1px solid #FF4500;
   font-size: 16px;
+  outline: none;
 
+}
+
+.filter {
+  width: 15%;
+  color: #FF00FF;
+  font-size: 20px;
+  background: black;
+  border: 1px solid #FF4500;
+  font-family: Inconsolata;
+  outline: none;
 }
 
 .sourceButtonA {
@@ -48,7 +61,6 @@
   border: 1px solid #20C20E;
   background-color: #000;
   cursor: pointer;
-
 }
 
 .sourceButtonB {
@@ -56,7 +68,7 @@
   border: 1px solid #FF00FF;
 }
 
-.sourceButtonA, .sourceButtonB {
+.sourceButtonA {
   font-family: Inconsolata;
   margin: 10px;
   background-color: #000;
@@ -68,13 +80,56 @@
   justify-content: center;
   text-align: center;
   cursor: pointer;
+  max-width: 300px;
+  min-width: 100px;
 }
 
-.sourceButtonB:active, {
+.sourceButtonB {
+  font-family: Inconsolata;
+  margin: 10px;
+  background-color: #000;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 2px;
+  display: flex;
+  flex-grow: 100;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  max-width: 300px;
+  min-width: 100px;
+}
+
+.sourceButtonA img {
+  margin-left: 5px
+}
+
+.sourceButtonB img {
+  margin-left: 5px
+}
+
+.next:active {
+  background-color: #FF4500;
+  color: white;
+
+}
+
+.sourceButtonB:active {
   background-color: #20C20E;
   color: white;
 }
 
-.sourceButtonB:hover,  {
+.width {
+  width: 2400px;
+}
+
+.sourceButtonB:hover  {
   background-color: #36454f;
+  transform: scale(1.1);
+
+}
+.sourceButtonA:hover  {
+  background-color: #36454f;
+  transform: scale(1.1);
+
 }

@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { selectedSources } from '../../reducer/reducerActions.js';
 import './newsSources.css';
+import addLogo from '../../icons/add-circular-button.svg';
+import minusLogo from '../../icons/minus-circular-button.svg';
 
 const baseURL = 'http://127.0.0.1:3001/';
 
@@ -24,30 +26,26 @@ class NewsSources extends Component {
   }
 
   updateSources = (favourites) => {
-    if (this.props.newsSources) {
-      fetch(baseURL + 'user-source', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          username: this.props.username,
-          sources: favourites,
-        })
+    fetch(baseURL + 'user-source', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        username: this.props.username,
+        sources: favourites,
       })
-      .then(this.props.selectedSources(favourites))
-      .then(this.props.history.push('/frontPage'));
-    } else {
-      
-    }
+    })
+    .then(this.props.selectedSources(favourites))
+    .then(this.props.history.push('/frontPage'));
   }
 
   render() {
     let filteredSources = this.props.newsSources.filter((provider) => provider.name.toLowerCase().indexOf(this.state.search) !== -1);
     let favourites = this.state.favourites;
 
-    const sourceList = filteredSources.map(source => {
+    const sourceList = filteredSources && filteredSources.map(source => {
       if (source && !favourites.includes(source.name)) {
         return (
-          <button className='sourceButtonA' onClick={() => { this.moveToFavourites(source.name) }} key={source.id}>{ source.name }</button>
+          <button className='sourceButtonA' onClick={() => { this.moveToFavourites(source.name) }} key={ source.id }>{ source.name }<img src={ addLogo } width='20' height='20'alt=""/></button>
         )
       }
       return null;
@@ -55,14 +53,14 @@ class NewsSources extends Component {
 
     const selectedSourceList = favourites && favourites.map(source => {
       return (
-        <button className='sourceButtonB' onClick={() => { this.deleteFromFavourites(source) }} key={ source + '&' }>{ source }</button>
+        <button className='sourceButtonB' onClick={() => { this.deleteFromFavourites(source) }} key={ source + '&' }>{ source }<img src={ minusLogo } width='20' height='20'alt=""/></button>
       )
     })
 
     return (
       <div>
         <div className="filterAndNext">
-          <input type="text" placeholder="filter... " autoComplete="" className="filterSources" onChange={this.filterSources} />
+          <input type="text" placeholder=" filter... " autoComplete="" className="filter" onChange={this.filterSources} />
           <button className="next" onClick={() => { this.updateSources(this.state.favourites) } }>to news >></button>
         </div>
         <div className="sourceList">
@@ -70,6 +68,8 @@ class NewsSources extends Component {
         </div>
         <div className="sourceList">
           { selectedSourceList }
+        </div>
+        <div className="width">
         </div>
       </div>
     )

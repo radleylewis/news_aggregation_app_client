@@ -1,6 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=Inconsolata);
 
+.new_email, .new_surname, .new_password, .new_firstName, .new_username {
+  background: black;
+  border: none;
+  border-bottom: .5px dashed #20C20E;
+  width: 50%;
+  color: #FF00FF;
+  margin-bottom: 0px;
+}
+
 .createAccountSlab {
+  background: black;
   text-align: center;
   border: 2px solid #20C20E;
   width: 30%;

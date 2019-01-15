@@ -6,9 +6,35 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: black;
-}
+  background: linear-gradient(124deg, #091b0c, #000000);
+  background-size: 400% 400%;
 
+  -webkit-animation: AnimationName 9s ease infinite;
+  -moz-animation: AnimationName 9s ease infinite;
+  -o-animation: AnimationName 9s ease infinite;
+  animation: AnimationName 9s ease infinite;
+
+  @-webkit-keyframes AnimationName {
+      0%{background-position:47% 0%}
+      50%{background-position:54% 100%}
+      100%{background-position:47% 0%}
+  }
+  @-moz-keyframes AnimationName {
+      0%{background-position:47% 0%}
+      50%{background-position:54% 100%}
+      100%{background-position:47% 0%}
+  }
+  @-o-keyframes AnimationName {
+      0%{background-position:47% 0%}
+      50%{background-position:54% 100%}
+      100%{background-position:47% 0%}
+  }
+  @keyframes AnimationName {
+      0%{background-position:47% 0%}
+      50%{background-position:54% 100%}
+      100%{background-position:47% 0%}
+  }
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

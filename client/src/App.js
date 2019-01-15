@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-
-import './App.css';
-import { deploySources } from './reducer/reducerActions.js';
-import { connect } from 'react-redux';
-
 import Login from './components/loginComponent/login.js'
+import FakeStats from './components/fakeStatsComponent/fakeStats.js';
 import About from './components/aboutComponent/about.js';
 import Preferences from './components/preferencesComponent/preferences.js';
 import FrontPage from './components/frontPageComponent/frontPage.js';
 import CreateAccount from './components/createAccountComponent/createAccount.js';
 import Navbar from './components/navbarComponent/navbar.js';
+
+import './App.css';
+import { deploySources } from './reducer/reducerActions.js';
+import { connect } from 'react-redux';
 
 const baseURL = 'http://localhost:3001/';
 const reqSources = new Request(baseURL + 'deploySources');
@@ -39,6 +39,7 @@ class App extends Component {
                 <Route path="/createAccount" component={ CreateAccount } />
                 <Route path="/about" component={ About } />
                 <Route path="/settings" component={ Preferences } />
+                <Route path="/stats" component={ FakeStats } />
               </Switch>
             </div>
           </React.Fragment>

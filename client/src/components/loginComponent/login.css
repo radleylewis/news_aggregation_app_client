@@ -11,13 +11,14 @@
   flex-direction: column;
   position: absolute;
   border-radius: 2px;
+  background: black;
 }
 
 .loginSlab p {
   color: white;
 }
 
-input {
+.username, .password {
   background: black;
   border: none;
   border-bottom: .5px dashed #20C20E;
@@ -40,7 +41,7 @@ input {
 }
 
 .newAccount {
-  text-align: right;
+  text-align: center;
   font-size: 10px;
   text-decoration: none;
   font-family: Inconsolata;
@@ -75,6 +76,22 @@ input {
   color: white;
 }
 
+.backToNews {
+  margin-top: 20px;
+  padding: 5px 0px;
+  cursor: pointer;
+  color: purple;
+  width: 50%;
+  border: 2px solid #FF00FF;
+  border-radius: 2px;
+  background: black;
+  font-family: Inconsolata;
+  color: white;
+  font-weight: bold;
+  outline: none;
+  margin-left: 25%;
+}
+
 .logoutButton {
   margin-top: 20px;
   margin-bottom: 50px;
@@ -90,6 +107,16 @@ input {
   font-weight: bold;
   outline: none;
   margin-left: 25%;
+}
+
+.backToNews:hover {
+  background-color: #36454f;
+  color: #FF00FF;
+}
+
+.backToNews:active {
+  background-color: #FF00FF;
+  color: white;
 }
 
 .logoutButton:hover {

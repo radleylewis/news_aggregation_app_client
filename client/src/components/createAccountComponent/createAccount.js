@@ -83,7 +83,7 @@ class CreateAccount extends Component {
               <input type="text" placeholder="e-mail..." autoComplete="" className="new_email" onChange={this.handleEmail} />
             </div>
             <div>
-              <button className="newUserSettingsButton">Next</button>
+              <button className="newUserSettingsButton" onClick={this.handleSubmit}>Next</button>
             </div>
           </form>
         </div>
