@@ -21,3 +21,8 @@ export const changePreferences = (newPreferences) => ({
   type: 'CHANGE_PREFERENCES',
   newPreferences,
 })
+
+export const noteFake = (check) => ({
+  type: 'NOTE_FAKE',
+  check: check,
+})

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import NoteFake from '../noteFakeComponent/noteFake.js';
+import { noteFake } from '../../reducer/reducerActions.js';
 import { connect } from 'react-redux';
 import './frontPage.css';
 import fakeNewsFlag from '../../icons/flag.svg';
 import twitterLogo from '../../icons/twitterLogo.svg';
 const moment = require('moment');
-
 const baseURL = 'http://127.0.0.1:3001/';
 
 class FrontPage extends Component {
@@ -21,7 +22,7 @@ class FrontPage extends Component {
         fakeNews: source,
       })
     })
-    .then(alert('Potential fake news noted'))
+    .then(this.props.noteFake(true));
   }
 
   render() {
@@ -52,34 +53,46 @@ class FrontPage extends Component {
             </div>
             <div className="source">
               <div className="options">
-                <a><img className="shareTwitter" src={ twitterLogo } width='20' height='20'alt=""/></a>
-                <a onClick={() => {this.fakeNews(story.source.name)} }><img className="fakeNewsFlag" src={ fakeNewsFlag }   width='20' height='20'alt=""/></a>
+                <a href="true"><img className="shareTwitter" src={ twitterLogo } width='20' height='20'alt=""/></a>
+                <a onClick={() => {this.fakeNews(story.source.name)} }><img className="fakeNewsFlag" src={ fakeNewsFlag } width='20' height='20'alt=""/></a>
+                </div>
                 <div>
                   <p className="sourceName">source: {story.source.name.toUpperCase()}</p>
                 </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
       )
     )
-
-    return (
-      <div className="newsResults">
-        {frontPage}
-      </div>
-    )
+    if (this.props.fakeNews === true) {
+      return (
+        <div className="newsResults">
+          <NoteFake />
+          { frontPage }
+        </div>
+      )
+    } else {
+      return (
+        <div className="newsResults">
+        { frontPage }
+        </div>
+      )
+    }
   }
 }
 
 const mapStateToProps = (state) =>({
   stories: state.stories,
   userPreferences: state.userPreferences,
+  fakeNews: state.fakeNews,
 });
 
+const mapDispatchToProps = (dispatch) => ({
+  noteFake: (check) => dispatch(noteFake(check)),
+});
 
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(FrontPage);

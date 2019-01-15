@@ -45,6 +45,10 @@
   float: right;
   color: #D3D3D3;
   font-family: Inconsolata;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 4px;
 }
 
 .details {
