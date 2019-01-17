@@ -3,7 +3,6 @@
   background-color: #000000;
   overflow: hidden;
   width: 100%;
-  border-bottom: 2px solid #20C20E;
   margin-bottom: 1.5%;
   z-index: 10;
 }
@@ -29,18 +28,18 @@
 }
 
 .navbar .active,.about {
-  color: #20C20E;
+  color: #22AFCA;
   text-decoration: none;
   padding: 15px 26px;
 }
 
 .navbar .active:hover, .about:hover, .settingsSwitch:hover {
   background-color: #36454f;
-  color: #20C20E;
+  color: #22AFCA;
 }
 
 .navbar .active:active, .about:active, .settingsSwitch:active {
-  background-color: #20C20E;
+  background-color: #22AFCA;
   color: white;
 }
 

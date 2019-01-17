@@ -6,7 +6,7 @@
   font-size: 20px;
   padding-top: 25px;
   padding-bottom: 25px;
-  color: #20C20E;
+  color: white;
   font-weight: bold;
   text-align: center;
   margin-bottom: 0px;
@@ -14,4 +14,7 @@
   border: 1px solid #20C20E;
   background: black;
   border-radius: 3px;
+  border: 1px solid #22AFCA;
+  transition: width 350ms ease-in-out 0s;
+  box-shadow: 0 0 19px 1px #0c75d7;
 }

@@ -55,7 +55,8 @@
   color: #20C20E;
 }
 
+
 .newUserSettingsButton:active {
-  background-color: #20C20E;
+  background-color: #22AFCA;
   color: white;
 }

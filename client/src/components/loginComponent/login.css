@@ -12,6 +12,9 @@
   position: absolute;
   border-radius: 2px;
   background: black;
+  border: 1px solid #22AFCA;
+  transition: width 350ms ease-in-out 0s;
+  box-shadow: 0 0 19px 1px #0c75d7;
 }
 
 .loginSlab p {
@@ -21,15 +24,15 @@
 .username, .password {
   background: black;
   border: none;
-  border-bottom: .5px dashed #20C20E;
+  border-bottom: .5px dashed #22AFCA;
   width: 50%;
-  color: #FF00FF;
+  color: #22AFCA;
   margin-bottom: 0px;
 }
 
 .username, .password {
   margin-top: 20px;
-  color: #FF00FF;
+  color: #22AFCA;
   font-size: 16px;
   font-family: Inconsolata;
   outline: none;
@@ -45,7 +48,7 @@
   font-size: 10px;
   text-decoration: none;
   font-family: Inconsolata;
-  color: #FF00FF;
+  color: #22AFCA;
   font-size: 12px;
   font-weight: bold;
 }
@@ -57,23 +60,30 @@
   cursor: pointer;
   color: purple;
   width: 50%;
-  border: 2px solid #20C20E;
+  border: 2px solid #22AFCA;
   border-radius: 2px;
   background: black;
   font-family: Inconsolata;
   color: white;
   font-weight: bold;
   outline: none;
+  border: 1px solid #22AFCA;
+  transition: width 350ms ease-in-out 0s;
+  box-shadow: 0 0 19px 1px #0c75d7;
 }
 
 .loginButton:hover {
-  background-color: #36454f;
-  color: #20C20E;
+  background: none;
+	transition: box-shadow 0.03s ease-in-out;
+	box-shadow: 0 0 12px 0px #0c75d7;
+	border: 1px solid #22AFCA;
 }
 
 .loginButton:active {
-  background-color: #20C20E;
-  color: white;
+  background: none;
+transition: box-shadow 0.03s ease-in-out;
+box-shadow: 0 0 12px 0px #0c75d7;
+border: 1px solid #22AFCA;
 }
 
 .backToNews {
@@ -82,7 +92,7 @@
   cursor: pointer;
   color: purple;
   width: 50%;
-  border: 2px solid #FF00FF;
+  border: 2px solid #22AFCA;
   border-radius: 2px;
   background: black;
   font-family: Inconsolata;
@@ -90,16 +100,21 @@
   font-weight: bold;
   outline: none;
   margin-left: 25%;
+  border: 1px solid #22AFCA;
+  transition: width 350ms ease-in-out 0s;
+  box-shadow: 0 0 19px 1px #0c75d7;
+
 }
 
 .logoutButton {
+
   margin-top: 20px;
   margin-bottom: 50px;
   padding: 5px 0px;
   cursor: pointer;
   color: purple;
   width: 50%;
-  border: 2px solid #20C20E;
+  border: 2px solid #22AFCA;
   border-radius: 2px;
   background: black;
   font-family: Inconsolata;
@@ -107,24 +122,29 @@
   font-weight: bold;
   outline: none;
   margin-left: 25%;
+  border: 1px solid #22AFCA;
+  transition: width 350ms ease-in-out 0s;
+  box-shadow: 0 0 19px 1px #0c75d7;
 }
 
 .backToNews:hover {
   background-color: #36454f;
-  color: #FF00FF;
+  color: #22AFCA;
 }
 
 .backToNews:active {
-  background-color: #FF00FF;
+  background-color: #22AFCA;
   color: white;
 }
 
 .logoutButton:hover {
   background-color: #36454f;
-  color: #20C20E;
+  color: #22AFCA;
 }
 
 .logoutButton:active {
-  background-color: #20C20E;
-  color: white;
+  background: none;
+transition: box-shadow 0.03s ease-in-out;
+box-shadow: 0 0 12px 0px #0c75d7;
+border: 1px solid #22AFCA;
 }

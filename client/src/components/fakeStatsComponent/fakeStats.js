@@ -30,8 +30,8 @@ class FakeStats extends Component {
         <div className="fakeHeader">Leading Fake News Outlets</div>
       	<BarChart width={1850} height={500} data={this.state.mostFake}
               margin={{top: 100, left: 500}}>
-         <XAxis dataKey="name" stroke="#20C20E"/>
-         <YAxis stroke="#20C20E"/>
+         <XAxis dataKey="name" stroke="#ff5700"/>
+         <YAxis stroke="#ff5700"/>
          <Tooltip/>
          <Bar type="monotone" dataKey="total" fill="#FF4500" />
         </BarChart>

@@ -15,7 +15,10 @@
   border: 2px solid #FF00FF;
   border-radius: 3px;
   outline: none;
-  
+  border: 1px solid #22AFCA;
+  transition: width 350ms ease-in-out 0s;
+  box-shadow: 0 0 19px 1px #0c75d7;
+
 }
 
 .fakeButton {
@@ -33,7 +36,9 @@
   min-width: 100px;
   background: none;
   outline: none;
-
+  border: 1px solid #22AFCA;
+  transition: width 350ms ease-in-out 0s;
+  box-shadow: 0 0 19px 1px #0c75d7;
 }
 
 .fakeButton:hover  {
@@ -41,6 +46,7 @@
 }
 
 .sourceButtonB:active {
-  background-color: #20C20E;
+  background-color: #22AFCA;
   color: white;
+
 }
