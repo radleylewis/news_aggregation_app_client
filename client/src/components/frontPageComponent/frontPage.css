@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Inconsolata);
 
 .newsResults {
-  margin-top: 3%;
+  margin-top: 5%;
 }
 
 .options {
@@ -11,9 +11,10 @@
   justify-content: space-between;
 }
 
-.fakeNewsFlag, .shareTwitter {
-  margin-left: 5px;
-  margin-right: 5px;
+.fakeNewsFlag, .shareTwitter, .rubbishBin {
+  margin: 2.5%;
+  width: 85%;
+  height: 85%;
   cursor: pointer;
 }
 
@@ -23,19 +24,12 @@
 
 .newsItem {
   display: flex;
-  margin-left: 20%;
-  margin-right: 20%;
-
+  height: 13vh;
 }
 
 .associatedPic {
   object-fit: cover;
   overflow: hidden;
-  background: center repeat;
-  border-radius: 3px;
-  border: 1px solid #ff5700;
-  transition: width 350ms ease-in-out 0s;
-  box-shadow: 0 0 19px 1px #ff5700;
 }
 
 .headline p, .storyBody p {
@@ -44,15 +38,23 @@
   font-family: Inconsolata;
 }
 
+.sourceName {
+  min-width: 75%;
+  font-size: 75%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 3px;
+  right: 0;
+}
+
 .source p {
-  padding: 0px;
   float: right;
+  text-align: right;
   color: #D3D3D3;
   font-family: Inconsolata;
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
-  margin-right: 4px;
 }
 
 .details {
@@ -60,56 +62,39 @@
   flex-direction: column;
   background: black;
   position: relative;
-  border-radius: 3px;
-  margin: 5px 10px;
   width: 98%;
-  justify-content: space-between;
-  border: 1px solid #ff5700;
-  transition: width 350ms ease-in-out 0s;
-  box-shadow: 0 0 19px 1px #ff5700;
-}
-
-.headline, .source, .storyBody {
-  margin-bottom: 10px;
-}
-
-.sourceTag {
-  color: #FF00FF,
 }
 
 .source {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  margin-bottom: .5%;
-  color: #D3D3D3;
   font-family: Inconsolata;
 }
 
 .publishedAt {
+  text-align: right;
   float: right;
   font-size: 12px;
+  min-width: 30%;
   font-weight: normal;
 }
 
 .headline {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 100%;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  min-height: 65%;
 }
 
 .container {
-  position: relative;
-  border: px solid purple;
-  display: inline-block;
-  margin: 5px 0px 5px 10px;
+  width: 30%;
 }
 
 .container img {
-  position: relative;
-  float: right;
-  width: 170px;
-  height: 130px;
+  float: left;
+  width: 100%;
+  height: 100%;
 }

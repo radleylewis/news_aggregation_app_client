@@ -53,7 +53,8 @@ class Login extends Component {
         <div>
           <div className="loginSlab">
             <img src={logo} alt="this should be a logo" height="100" width="100" className="logo" />
-            <p>Hi { this.props.firstname }, you're already logged in.</p>
+            <p>Hi { this.props.firstname },</p>
+            <p>you're already logged in.</p>
             <button className="backToNews" onClick={ this.backToNews }>Back to news</button>
             <button className="logoutButton" onClick={ this.handleLogout }>Log out</button>
           </div>

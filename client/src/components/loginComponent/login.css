@@ -1,20 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Inconsolata);
 
-
 .loginSlab {
   text-align: center;
-  border: 2px solid #20C20E;
-  width: 30%;
+  width: 80%;
+  height: 60%;
   top: 20%;
-  right: 35%;
+  right: 10%;
   display: flex;
   flex-direction: column;
   position: absolute;
-  border-radius: 2px;
-  background: black;
-  border: 1px solid #22AFCA;
-  transition: width 350ms ease-in-out 0s;
-  box-shadow: 0 0 19px 1px #0c75d7;
+  background: rgba(0,0,0,.5);
 }
 
 .loginSlab p {
@@ -24,7 +19,6 @@
 .username, .password {
   background: black;
   border: none;
-  border-bottom: .5px dashed #22AFCA;
   width: 50%;
   color: #22AFCA;
   margin-bottom: 0px;
@@ -32,7 +26,7 @@
 
 .username, .password {
   margin-top: 20px;
-  color: #22AFCA;
+  color: whitef;
   font-size: 16px;
   font-family: Inconsolata;
   outline: none;
@@ -40,7 +34,8 @@
 
 .logo {
   margin-top: 30px;
-  margin-left: 42%;
+  margin-left: 35%;
+  width: 30%;
 }
 
 .newAccount {
@@ -54,77 +49,62 @@
 }
 
 .loginButton {
-  margin-top: 20px;
-  margin-bottom: 50px;
-  padding: 5px 0px;
   cursor: pointer;
-  color: purple;
-  width: 50%;
-  border: 2px solid #22AFCA;
-  border-radius: 2px;
-  background: black;
-  font-family: Inconsolata;
-  color: white;
-  font-weight: bold;
   outline: none;
-  border: 1px solid #22AFCA;
-  transition: width 350ms ease-in-out 0s;
-  box-shadow: 0 0 19px 1px #0c75d7;
-}
-
-.loginButton:hover {
+  padding: 2% 2%;
+  color: white !important;
+  font-weight: bold;
+  overflow: hidden;
+  position: relative;
+  float: center;
   background: none;
-	transition: box-shadow 0.03s ease-in-out;
-	box-shadow: 0 0 12px 0px #0c75d7;
-	border: 1px solid #22AFCA;
+  box-shadow: 0 0 0 0 #22AFCA;
+  border: 1px solid #22AFCA;
+  width: 50%;
+  background: #22AFCA;
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
 
-.loginButton:active {
+.logoutButton, .backToNews {
+  cursor: pointer;
+  outline: none;
+  padding: 2% 2%;
+  color: white !important;
+  font-weight: bold;
+  overflow: hidden;
+  position: relative;
+  float: center;
   background: none;
-transition: box-shadow 0.03s ease-in-out;
-box-shadow: 0 0 12px 0px #0c75d7;
-border: 1px solid #22AFCA;
+  box-shadow: 0 0 0 0 #22AFCA;
+  border: 1px solid #22AFCA;
+  width: 50%;
+  background: #22AFCA;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 25%;
 }
 
-.backToNews {
-  margin-top: 20px;
-  padding: 5px 0px;
-  cursor: pointer;
-  color: purple;
-  width: 50%;
-  border: 2px solid #22AFCA;
-  border-radius: 2px;
-  background: black;
-  font-family: Inconsolata;
-  color: white;
-  font-weight: bold;
-  outline: none;
-  margin-left: 25%;
-  border: 1px solid #22AFCA;
-  transition: width 350ms ease-in-out 0s;
-  box-shadow: 0 0 19px 1px #0c75d7;
-
+.loginButton:hover::after, .logoutButton:hover::after  {
+  left: 120%;
+  background: white;
+  transition: all 850ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
 }
 
-.logoutButton {
-
-  margin-top: 20px;
-  margin-bottom: 50px;
-  padding: 5px 0px;
-  cursor: pointer;
-  color: purple;
-  width: 50%;
-  border: 2px solid #22AFCA;
-  border-radius: 2px;
-  background: black;
-  font-family: Inconsolata;
-  color: white;
-  font-weight: bold;
-  outline: none;
-  margin-left: 25%;
-  border: 1px solid #22AFCA;
-  transition: width 350ms ease-in-out 0s;
-  box-shadow: 0 0 19px 1px #0c75d7;
+.loginButton::after, .logoutButton::after {
+  background: white none repeat scroll 0 0;
+  content: "";
+  height: 155px;
+  left: -75px;
+  opacity: 0.2;
+  position: absolute;
+  top: -50px;
+  transform: rotate(35deg);
+  transition: all 850ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+  width: 50px;
+  z-index: 10000000000000000000000;
+  transition: all 0s ease-in-out 0s;
+  box-shadow: 0 0 5px 0 white;
 }
 
 .backToNews:hover {

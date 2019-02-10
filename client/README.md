@@ -1,68 +1,52 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# News Aggregator
+<p align="center">
+<img alt="" src="https://github.com/radleylewis/news_aggregation_app_client/readme_assets/login.png?raw=true"/>
+</p>
 
-## Available Scripts
+With more than 70 global news sources this application simplifies your search for latest breaking news. Simply select your favourite news sources and your feed will be updated on a minute by minute basis.
 
-In the project directory, you can run:
+## Getting Started
+1. Clone the repository
+```
+$ git clone https://github.com/radleylewis/news_aggregation_app_client.git
+cd news_aggregation_app_client/client
 
-### `npm start`
+```
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2. Install required dependencies
+```npm install```
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+4. Run the backend development server
+Instructions on this can be found at: https://github.com/radleylewis/news_aggregation_app_server.git
 
-### `npm test`
+3. Start the application in development mode
+```
+npm start
+```
+## FAQ
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### How do I get started?
 
-### `npm run build`
+From the landing page, click 'create account' and create a profile following the instructions.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### How do I select my preferred news sources?
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+You'll be prompted to select these on sign up. Of course you can always adjust your settings in the settings page (top right button on the navigation bar).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### How many sources can I select?
 
-### `npm run eject`
+You can select as many as there are listed. You will received the 10 most recent articles from each source.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Tech Stack
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[React](https://github.com/facebook/react) - A declarative, efficient, and flexible JavaScript library for building user interfaces.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+[Redux](https://github.com/reduxjs/redux) - Predictable state container for JavaScript apps.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Contributing
 
-## Learn More
+This app is an open source project and contributions are welcome. Please fork the repo and submit a pull request for review.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Author
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Radley Sidwell-Lewis: [Github](https://github.com/radleylewis) & [LinkedIn](https://www.linkedin.com/in/rad-e-sidwell-lewis/)

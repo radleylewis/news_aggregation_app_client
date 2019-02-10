@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
-import NoteFake from '../noteFakeComponent/noteFake.js';
-import { noteFake } from '../../reducer/reducerActions.js';
 import { connect } from 'react-redux';
+
+import Bookmark from '../bookmarkedComponent/bookmarks.js';
+import { bookmark } from '../../reducer/reducerActions.js';
+
 import './frontPage.css';
-import fakeNewsFlag from '../../icons/flag.svg';
+import yetToFavourite from '../../icons/yetToFavourite.svg';
 import twitterLogo from '../../icons/twitterLogo.svg';
+import rubbishBin from '../../icons/delete.svg';
+
 const moment = require('moment');
 const baseURL = 'http://127.0.0.1:3001/';
 
 class FrontPage extends Component {
-
-  state = {
-    userArticles: [],
+  constructor(props) {
+    super(props);
+    this.state = {
+      userArticles: [],
+    }
   }
 
   fakeNews = (source) => {
@@ -46,39 +52,28 @@ class FrontPage extends Component {
           <div className="details">
             <div className="headline">
               <p>{story.title.toUpperCase().split(' - ')[0]}</p>
-              <p className="publishedAt">{moment(story.publishedAt).fromNow()}</p>
-            </div>
-            <div className="storyBody">
-              <p>{story.content || story.description}</p>
             </div>
             <div className="source">
               <div className="options">
-                <a href="true"><img className="shareTwitter" src={ twitterLogo } width='20' height='20'alt=""/></a>
-                <a onClick={() => {this.fakeNews(story.source.name)} }><img className="fakeNewsFlag" src={ fakeNewsFlag } width='20' height='20'alt=""/></a>
+                <a href="true"><img className="shareTwitter" src={ twitterLogo } alt=""/></a>
+                <a onClick={() => { this.fakeNews(story.source.name)} }><img className="fakeNewsFlag" src={ yetToFavourite } alt=""/></a>
                 </div>
-                <div>
-                  <p className="sourceName">source: {story.source.name.toUpperCase()}</p>
+                <div className="sourceName">
+                  <p>{story.source.name.toUpperCase()}</p>
+                  <p className="publishedAt">{moment(story.publishedAt).fromNow()}</p>
                 </div>
+                <a href="true"><img className="rubbishBin" src={ rubbishBin } alt=""/></a>
             </div>
           </div>
         </div>
       </div>
       )
     )
-    if (this.props.fakeNews === true) {
-      return (
-        <div className="newsResults">
-          <NoteFake />
-          { frontPage }
-        </div>
-      )
-    } else {
-      return (
-        <div className="newsResults">
-        { frontPage }
-        </div>
-      )
-    }
+    return (
+      <div className="newsResults">
+      { frontPage }
+      </div>
+    )
   }
 }
 
@@ -89,7 +84,7 @@ const mapStateToProps = (state) =>({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  noteFake: (check) => dispatch(noteFake(check)),
+  bookmark: (check) => dispatch(bookmark(check)),
 });
 
 export default connect(

@@ -1,158 +1,151 @@
 @import url(https://fonts.googleapis.com/css?family=Inconsolata);
 
-.filterSources {
-  color: #22AFCA;
-  text-align: center;
-  width: 10%;
-  margin-left: .4%;
-  margin-top: 5.1%;
-  margin-bottom: .3%;
+.allSources {
   display: flex;
-  font-size: 20px;
-  font-family: Inconsolata;
-  font-size: 20px;
-  color: white;
+  flex-direction: row;
+  width: 100%;
 }
 
 .sourceList {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  align-items: flex-start;
   float: left;
-  margin-top: .7%;
-  width: 100%;
+  width: 50%;
+}
+
+.sourcesContainer {
+    min-width: 100vw;
+}
+
+.selectedSourceList {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  float: left;
+  width: 49%;
 }
 
 .filterAndNext {
+  padding-top: 7.5%;
+  padding-bottom: 1.5%;
   display: flex;
-  padding-top: 80px;
-  padding-left: 10px;
-  padding-right: 10px;
   justify-content: space-between;
-  margin-bottom: 20px;
 }
 
 .next {
-  width: 15%;
+  background: #22AFCA;
+  border: 1px solid #22AFCA;
+  box-shadow: 0 0 0 0 #22AFCA;
   cursor: pointer;
-  color: #22AFCA;
-  padding: 15px 26px;
+  color: white;
+  padding-bottom: 5%;
+  padding-top: 5%;
+  width: 45%;
   font-family: Inconsolata;
-  border-radius: 2px;
-  background-color: #000;
-  border: 1px solid #22AFCA;
-  font-size: 16px;
+  background-color: #22AFCA;
+  font-size: 100%;
   outline: none;
-  border: 1px solid #22AFCA;
-  transition: width 300ms ease-in-out 0s;
-  box-shadow: 0 0 19px 1px #0c75d7;
+  margin-right: 2.5%;
+}
+
+.next:hover::after {
+  left: 120%;
+  background: white;
+  transition: all 850ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+}
+
+.next::after {
+  background: white none repeat scroll 0 0;
+  content: "";
+  height: 155px;
+  left: -75px;
+  opacity: 0.2;
+  position: absolute;
+  top: -50px;
+  transform: rotate(35deg);
+  transition: all 850ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+  width: 50px;
+  z-index: 10000000000000000000000;
+  transition: all 0s ease-in-out 0s;
+  box-shadow: 0 0 5px 0 white;
 }
 
 .filter {
-  width: 15%;
-  color: #FF00FF;
-  font-size: 20px;
-  background: black;
-  border: 1px solid #22AFCA;
-  font-family: Inconsolata;
+  padding-left: 5%;
+  margin-left: 2.5%;
+  font-size: 100%;
+  width: 40%;
+  background: #000;
   outline: none;
-  border: 1px solid #22AFCA;
-  transition: width 350ms ease-in-out 0s;
-  box-shadow: 0 0 19px 1px #0c75d7;
+  color: white;
+  font-family: Inconsolata;
+  border: 1px solid #FFFF;
+  transition: width 300ms ease-in-out 0s;
+  box-shadow: 0 0 19px 1px #FFFF;
 }
 
 .sourceButtonA {
   color: #22AFCA;
-  border: none;
-  background-color: #000;
+  font-weight: 500;
+  display: block;
+  min-width: 97%;
+  vertical-align: middle;
+  outline: none !important;
+  display: block;
+  font-family: Inconsolata;
+  margin-left: 2%;
+  margin-top: 2%;
+  margin-right: 1%;
+  background-color: rgb(0,0,0,.5);
+  padding: 4%;
+  font-size: 100%;
+  display: flex;
+  flex-grow: 100;
+  justify-content: center;
+  text-align: left;
   cursor: pointer;
+  border: none;
+  max-height: 50px;
+  min-height: 50px;
 }
 
 .sourceButtonB {
   color: #ff5700;
-  background-color: #000;
-  cursor: pointer;
-}
-
-.sourceButtonA {
-  font-family: 'Montserrat', sans-serif;
-  border-radius: 0;
-  margin: 0;
-  padding: 0;
-  font-weight: 700;
-  display: block;
-  width: 100%;
-  font-size: 15px;
+  font-weight: 500;
+  width: 98%;
   vertical-align: middle;
   outline: none !important;
-  bottom: 0;
-  max-width: 260px;
-  min-width: 100px;
-  content: " ";
-  display: block;
-  position: relative;
-  transition: all 280ms ease-in-out 0s;
-  box-shadow: 0px 0px 0px #22AFCA;
   font-family: Inconsolata;
-  margin: 10px;
-  background-color: #000;
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 2px;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-top: 2%;
+  background-color: rgb(0,0,0,.5);
+  padding: 4%;
+  font-size: 100%;
   display: flex;
-  flex-grow: 100;
+  flex-grow: 5;
   justify-content: center;
-  text-align: center;
+  text-align: left;
   cursor: pointer;
-  border: 1px solid black;
-
-}
-
-.sourceButtonB {
-  font-family: 'Montserrat', sans-serif;
-  border-radius: 0;
-  margin: 0;
-  padding: 0;
-  font-weight: 700;
-  display: block;
-  width: 100%;
-  font-size: 15px;
-  vertical-align: middle;
-  outline: none !important;
-  bottom: 0;
-  max-width: 260px;
-  min-width: 100px;
-  content: " ";
-  display: block;
-  position: relative;
-  transition: all 280ms ease-in-out 0s;
-  box-shadow: 0px 0px 0px #22AFCA;
-  font-family: Inconsolata;
-  margin: 10px;
-  background-color: #000;
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 2px;
-  display: flex;
-  flex-grow: 100;
-  justify-content: center;
-  text-align: center;
-  cursor: pointer;
-  border: 1px solid black;
+  border: none;
+  max-height: 50px;
+  min-height: 50px;
 }
 
 .sourceButtonA img {
-  margin-left: 5px
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .sourceButtonB img {
-  margin-left: 5px
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .next:active {
   background-color: #22AFCA;
   color: white;
-
 }
 
 .sourceButtonA:active {
@@ -160,14 +153,9 @@
   color: white;
 }
 
-.sourceButtonB:active, {
+.sourceButtonB:active {
   background-color: #ff5700;
   color: white;
-}
-
-
-.width {
-  width: 2400px;
 }
 
 .sourceButtonB:hover  {

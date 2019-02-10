@@ -9,10 +9,12 @@ import minusLogo from '../../icons/minus-circular-button.svg';
 const baseURL = 'http://127.0.0.1:3001/';
 
 class NewsSources extends Component {
-
-  state = {
-    search: '',
-    favourites: [...this.props.userPreferences],
+  constructor (props) {
+    super(props);
+    this.state = {
+      search: '',
+      favourites: [...this.props.userPreferences],
+    }
   }
 
   filterSources = (e) => this.setState({...this.state, search: e.target.value.toLowerCase()});;
@@ -50,7 +52,6 @@ class NewsSources extends Component {
       }
       return null;
     })
-
     const selectedSourceList = favourites && favourites.map(source => {
       return (
         <button className='sourceButtonB' onClick={() => { this.deleteFromFavourites(source) }} key={ source + '&' }>{ source }<img src={ minusLogo } width='20' height='20'alt=""/></button>
@@ -60,16 +61,16 @@ class NewsSources extends Component {
     return (
       <div>
         <div className="filterAndNext">
-          <input type="text" placeholder=" filter... " autoComplete="" className="filter" onChange={this.filterSources} />
+          <input type="text" placeholder="filter... " autoComplete="" className="filter" onChange={this.filterSources} />
           <button className="next" onClick={() => { this.updateSources(this.state.favourites) } }>to news >></button>
         </div>
-        <div className="sourceList">
-          { sourceList }
-        </div>
-        <div className="sourceList">
-          { selectedSourceList }
-        </div>
-        <div className="width">
+        <div className="allSources">
+          <div className="sourceList">
+            { sourceList }
+          </div>
+          <div className="selectedSourceList">
+            { selectedSourceList }
+          </div>
         </div>
       </div>
     )

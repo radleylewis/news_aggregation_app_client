@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from './components/loginComponent/login.js'
-import FakeStats from './components/fakeStatsComponent/fakeStats.js';
+import Bookmark from './components/bookmarkedComponent/bookmarks.js';
 import About from './components/aboutComponent/about.js';
 import Preferences from './components/preferencesComponent/preferences.js';
 import FrontPage from './components/frontPageComponent/frontPage.js';
@@ -17,12 +17,12 @@ const reqSources = new Request(baseURL + 'deploySources');
 
 class App extends Component {
 
-  componentDidMount() {
-    fetch(reqSources)
-    .then(res => res.json())
-    .then(sourceList => this.props.deploySources(sourceList))
-    .catch(error => console.error('Error :( ', error));
-  }
+	componentDidMount() {
+		fetch(reqSources)
+			.then(res => res.json())
+			.then(sourceList => this.props.deploySources(sourceList))
+      .catch(error => console.error('Error :( ', error)); // eslint-disable-line
+	}
 
   render() {
     return (
@@ -39,7 +39,7 @@ class App extends Component {
                 <Route path="/createAccount" component={ CreateAccount } />
                 <Route path="/about" component={ About } />
                 <Route path="/settings" component={ Preferences } />
-                <Route path="/stats" component={ FakeStats } />
+                <Route path="/stats" component={ Bookmark } />
               </Switch>
             </div>
           </React.Fragment>

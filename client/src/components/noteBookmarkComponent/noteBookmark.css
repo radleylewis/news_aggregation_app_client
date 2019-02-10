@@ -44,9 +44,3 @@
 .fakeButton:hover  {
   background-color: #36454f;
 }
-
-.sourceButtonB:active {
-  background-color: #22AFCA;
-  color: white;
-
-}

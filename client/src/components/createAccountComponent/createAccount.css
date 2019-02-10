@@ -1,25 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=Inconsolata);
 
-.new_email, .new_surname, .new_password, .new_firstName, .new_username {
-  background: black;
-  border: none;
-  border-bottom: .5px dashed #20C20E;
-  width: 50%;
-  color: #FF00FF;
-  margin-bottom: 0px;
-}
-
 .createAccountSlab {
-  background: black;
   text-align: center;
-  border: 2px solid #20C20E;
-  width: 30%;
-  top: 20%;
-  right: 35%;
+  width: 80%;
+  height: 70%;
+  top: 15%;
+  right: 10%;
   display: flex;
   flex-direction: column;
   position: absolute;
   border-radius: 2px;
+  background: rgba(0,0,0,.75);
 }
 
 .createAccountSlab p {
@@ -28,35 +19,45 @@
 
 .new_email, .new_surname, .new_password, .new_username, .new_firstName {
   margin-top: 20px;
-  color: #FF00FF;
+  color: #22AFCA;
   font-size: 16px;
   font-family: Inconsolata;
   outline: none;
+  background: black;
+  border: none;
+  width: 50%;
+  color: #22AFCA;
+  margin-bottom: 0px;
 }
 
 .newUserSettingsButton {
-  margin-top: 20px;
-  margin-bottom: 50px;
-  padding: 5px 0px;
+  margin-top: 12.5%;
+  margin-bottom: 12.5%;
+  padding: 2% 0%;
   cursor: pointer;
-  color: purple;
   width: 50%;
-  border: 2px solid #20C20E;
   border-radius: 2px;
   background: black;
   font-family: Inconsolata;
   color: white;
   font-weight: bold;
   outline: none;
+  border: 1px solid #22AFCA;
+  transition: width 350ms ease-in-out 0s;
+  box-shadow: 0 0 19px 1px #0c75d7;
 }
 
 .newUserSettingsButton:hover {
-  background-color: #36454f;
-  color: #20C20E;
+  background: none;
+	transition: box-shadow 0.03s ease-in-out;
+	box-shadow: 0 0 12px 0px #0c75d7;
+	border: 1px solid #22AFCA;
 }
 
 
 .newUserSettingsButton:active {
-  background-color: #22AFCA;
-  color: white;
+  background: none;
+  transition: box-shadow 0.03s ease-in-out;
+  box-shadow: 0 0 12px 0px #0c75d7;
+  border: 1px solid #22AFCA;
 }

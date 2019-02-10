@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { noteFake } from '../../reducer/reducerActions.js';
-import './noteFake.css';
+import './noteBookmark.css';
 
-class NoteFake extends Component {
+class NoteBookmark extends Component {
 
   noteFake = () => {
     this.props.noteFake(false);
@@ -30,4 +30,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(NoteFake);
+)(NoteBookmark);
