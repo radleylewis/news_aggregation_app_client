@@ -20,7 +20,7 @@ $ cd news_aggregation_app_client/client
 $ npm install
 ```
 
-4. Run the backend development server
+4. Set-up and run the backend development server
 Instructions on this can be found at: https://github.com/radleylewis/news_aggregation_app_server.git
 
 3. Start the application in development mode
@@ -56,6 +56,8 @@ You can select as many as there are listed. You will received the 10 most recent
 [MongoDB](https://www.mongodb.com/) - MongoDB is a document database with the scalability and flexibility that you want with the querying and indexing that you need.
 
 [Mongoose](https://mongoosejs.com/) - Mongoose provides a straight-forward, schema-based solution to model your MongoDB application data. It includes built-in type casting, validation, query building, business logic hooks and more, out of the box.
+
+[News API](https://newsapi.org/) - Get breaking news headlines, and search for articles from over 30,000 news sources and blogs with News API.
 
 ## Contributing
 
