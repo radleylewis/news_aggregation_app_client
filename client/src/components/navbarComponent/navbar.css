@@ -1,9 +1,10 @@
 .navbar {
   position: fixed;
+  bottom: 0;
   background-color: #354948;
   overflow: hidden;
   width: 100%;
-  z-index: 10;
+  z-index: 100;
 }
 
 #toggleSettings {

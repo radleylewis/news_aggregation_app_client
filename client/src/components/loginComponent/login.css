@@ -17,11 +17,17 @@
 }
 
 .username, .password {
-  background: black;
-  border: none;
-  width: 50%;
-  color: #22AFCA;
-  margin-bottom: 0px;
+  margin-left: 2.5%;
+  padding: 2%;
+  font-size: 100%;
+  width: 46%;
+  background: #000;
+  outline: none;
+  color: white;
+  font-family: Inconsolata;
+  border: 1px solid #FFFF;
+  transition: width 300ms ease-in-out 0s;
+  box-shadow: 0 0 19px 1px #FFFF;
 }
 
 .username, .password {
@@ -124,7 +130,7 @@
 
 .logoutButton:active {
   background: none;
-transition: box-shadow 0.03s ease-in-out;
-box-shadow: 0 0 12px 0px #0c75d7;
-border: 1px solid #22AFCA;
+  transition: box-shadow 0.03s ease-in-out;
+  box-shadow: 0 0 12px 0px #0c75d7;
+  border: 1px solid #22AFCA;
 }

@@ -18,16 +18,17 @@
 }
 
 .new_email, .new_surname, .new_password, .new_username, .new_firstName {
-  margin-top: 20px;
-  color: #22AFCA;
-  font-size: 16px;
-  font-family: Inconsolata;
+  margin-top: 3%;
+  padding: 2%;
+  font-size: 100%;
+  width: 46%;
+  background: #000;
   outline: none;
-  background: black;
-  border: none;
-  width: 50%;
-  color: #22AFCA;
-  margin-bottom: 0px;
+  color: white;
+  font-family: Inconsolata;
+  border: 1px solid #FFFF;
+  transition: width 300ms ease-in-out 0s;
+  box-shadow: 0 0 19px 1px #FFFF;
 }
 
 .newUserSettingsButton {
