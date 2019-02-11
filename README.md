@@ -43,9 +43,19 @@ You can select as many as there are listed. You will received the 10 most recent
 
 ## Tech Stack
 
+#### Front-End:
+
 [React](https://github.com/facebook/react) - A declarative, efficient, and flexible JavaScript library for building user interfaces.
 
 [Redux](https://github.com/reduxjs/redux) - Predictable state container for JavaScript apps.
+
+#### Back-End:
+
+[Express](https://expressjs.com/) - Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
+
+[MongoDB](https://www.mongodb.com/) - MongoDB is a document database with the scalability and flexibility that you want with the querying and indexing that you need.
+
+[Mongoose](https://mongoosejs.com/) - Mongoose provides a straight-forward, schema-based solution to model your MongoDB application data. It includes built-in type casting, validation, query building, business logic hooks and more, out of the box.
 
 ## Contributing
 
