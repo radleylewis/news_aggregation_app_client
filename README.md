@@ -21,7 +21,7 @@ $ npm install
 ```
 
 4. Set-up and run the backend development server
-Instructions on this can be found at: https://github.com/radleylewis/news_aggregation_app_server.git
+Instructions on this can be found [here](https://github.com/radleylewis/news_aggregation_app_server.git)
 
 3. Start the application in development mode
 ```bash
