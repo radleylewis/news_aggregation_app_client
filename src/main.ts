@@ -3,11 +3,13 @@ const path = require('path');
 const debug = require('electron-debug');
 const os = require('os');
 
+const serve = require('../serve.js');
+
 /* NOTE: require .env configuration */
 require('dotenv').config();
 
 /* NOTE: set window object */
-let mainWindow: any = null;
+let mainWindow = null;
 
 /* NOTE: activate debugging if in dev mode */
 process.env.NODE_ENV === 'development' && debug();
@@ -25,18 +27,29 @@ const _installExtensions = () => {
 };
 
 const createWindow = async () => {
+
+  /* NOTE: define web preferences */
+  const webPreferences = {};
+
   /* NOTE: install dev extensions if developing */
-  process.env.NODE_ENV === 'development' && _installExtensions();
+  if (process.env.NODE_ENV === 'development') {
+    serve();
+    _installExtensions();
+    webPreferences.preload = path.join(__dirname, 'preload.js');
+  };
 
   /* NOTE: Create the browser window */
   mainWindow = new BrowserWindow({
     show: false,
     width: 800,
     height: 600,
+    webPreferences,
   });
 
   /* NOTE: load html file */
-  mainWindow.loadFile('./index.html');
+  process.env.NODE_ENV === 'development'
+    ? mainWindow.loadURL('http://localhost:3000')
+    : mainWindow.loadFile('./index.html');
 
   /* NOTE: show and focus application on load finish window */
   mainWindow.webContents.on('did-finish-load', () => {
