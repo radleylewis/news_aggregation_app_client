@@ -1,0 +1,6 @@
+{
+  "name": "news_aggregator_main",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT"
+}

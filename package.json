@@ -1,39 +1,52 @@
 {
-  "name": "news_aggregation_app_client",
+  "name": "news_aggregator_electron",
   "version": "1.0.0",
-  "description": "Cross-platform news aggregation application",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
   "scripts": {
-    "build": "webpack --config ./configurations/webpack.config.js",
-    "start": "npm run build && electron ./builds/main.js",
-    "dev": "electron ./src/main.ts"
+    "electron-rebuild": "electron-rebuild --parallel --force --types dev --module-dir src",
+    "start": "cross-env START_HOT=1 NODE_ENV=development webpack-dev-server configs/webpack.development.config.js",
+    "dev": "cross-env START_HOT=1 NODE_ENV=development electron -r ./src/main.dev.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/radleylewis/news_aggregation_app_client.git"
   },
-  "author": "Radley Edward Sidwell-Lewis",
+  "author": "Radley E Sidwell-Lewis",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/radleylewis/news_aggregation_app_client/issues"
   },
   "homepage": "https://github.com/radleylewis/news_aggregation_app_client#readme",
   "devDependencies": {
-    "@types/react": "^16.9.35",
-    "@types/react-dom": "^16.9.8",
-    "electron": "^9.0.0",
-    "electron-debug": "^3.1.0",
-    "express": "^4.17.1",
-    "html-webpack-plugin": "^4.3.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "ts-loader": "^7.0.5",
-    "typescript": "^3.9.3",
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/register": "^7.10.1",
+    "@hot-loader/react-dom": "^16.13.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.1.0",
+    "cross-env": "^7.0.2",
+    "css-loader": "^3.5.3",
+    "electron": "^9.0.2",
+    "electron-log": "^4.2.1",
+    "electron-rebuild": "^1.11.0",
+    "electron-updater": "^4.3.1",
+    "npm": "^6.14.5",
+    "react-hot-loader": "^4.12.21",
+    "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-middleware": "^3.7.2",
-    "webpack-hot-middleware": "^2.25.0"
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "dotenv": "^8.2.0"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devEngines": {
+    "node": ">=7.x",
+    "npm": ">=4.x",
+    "yarn": ">=0.21.3"
   }
 }
