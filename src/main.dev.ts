@@ -1,3 +1,4 @@
+import "@babel/polyfill";
 import path from 'path';
 import { app, BrowserWindow } from 'electron';
 import { autoUpdater } from 'electron-updater';
