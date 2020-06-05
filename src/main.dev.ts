@@ -1,8 +1,9 @@
 import "@babel/polyfill";
 import path from 'path';
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, session } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
+import os from 'os';
 
 export default class AppUpdater {
   constructor() {
@@ -27,13 +28,27 @@ if (
 }
 
 const installExtensions = async () => {
-  const installer = require('electron-devtools-installer');
-  const forceDownload = !!process.env.UPGRADE_EXTENSIONS;
-  const extensions = ['REACT_DEVELOPER_TOOLS', 'REDUX_DEVTOOLS'];
+  /* DEV: load redux devtools */
+  // session.defaultSession.loadExtension(
+  //   path.join(
+  //     os.homedir(),
+  //     '/.config/google-chrome/Default/Extensions/lmhkpmbekcpmknklioeibfkpmmfibljd/2.17.0_0'
+  //   )
+  // );
+  /* DEV: load react devtools */
+  session.defaultSession.loadExtension(
+    path.join(
+      os.homedir(),
+      '/.config/google-chrome/Default/Extensions/fmkadmapgofadopljbjfkapdkoienihi/4.7.0_2'
+    )
+  );
+  // const installer = require('electron-devtools-installer');
+  // const forceDownload = true;
+  // const extensions = ['REACT_DEVELOPER_TOOLS', 'REDUX_DEVTOOLS'];
 
-  return Promise.all(
-    extensions.map(name => installer.default(installer[name], forceDownload))
-  ).catch(console.log);
+  // return Promise.all(
+  //   extensions.map(name => installer.default(installer[name], forceDownload))
+  // ).catch(console.log);
 };
 
 const createWindow = async () => {
@@ -49,9 +64,10 @@ const createWindow = async () => {
     width: 1024,
     height: 728,
     webPreferences:
-      process.env.NODE_ENV === 'development' || process.env.E2E_BUILD === 'true'
+      process.env.NODE_ENV === 'development'
         ? {
-          nodeIntegration: true
+          nodeIntegration: true,
+          enableRemoteModule: true
         }
         : {
           preload: path.join(__dirname, 'dist/renderer.prod.js')
@@ -60,8 +76,6 @@ const createWindow = async () => {
 
   mainWindow.loadURL(`file://${__dirname}/app.html`);
 
-  // @TODO: Use 'ready-to-show' event
-  //        https://github.com/electron/electron/blob/master/docs/api/browser-window.md#using-ready-to-show-event
   mainWindow.webContents.on('did-finish-load', () => {
     if (!mainWindow) {
       throw new Error('"mainWindow" is not defined');

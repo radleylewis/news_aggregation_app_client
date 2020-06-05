@@ -21,10 +21,10 @@ import baseConfig from './webpack.config.base.babel';
 //   CheckNodeEnv('development');
 // }
 
-const port = process.env.PORT || 1212;
+const port = 8080;
 const publicPath = `http://localhost:${port}/dist`;
 const dll = path.join(__dirname, '..', 'dll');
-const manifestPath = path.resolve(dll, 'renderer.json');
+// const manifestPath = path.resolve(dll, 'renderer.json');
 
 // import manifest from 'manifestPath';
 // const requiredByDLLConfig = module.parent.filename.includes(
