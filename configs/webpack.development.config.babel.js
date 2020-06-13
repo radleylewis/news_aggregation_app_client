@@ -54,7 +54,7 @@ export default merge.smart(baseConfig, {
     ...(process.env.PLAIN_HMR ? [] : ['react-hot-loader/patch']),
     `webpack-dev-server/client?http://localhost:${port}/`,
     'webpack/hot/only-dev-server',
-    path.resolve(`${__dirname}/../src/index.tsx`)
+    require.resolve(`${__dirname}/../src/index.tsx`)
   ],
 
   output: {
@@ -263,16 +263,14 @@ export default merge.smart(baseConfig, {
       disableDotRule: false
     },
     before() {
-      if (process.env.START_HOT) {
-        console.log('Starting Main Process...');
-        spawn('npm', ['run', 'start-main-dev'], {
-          shell: true,
-          env: process.env,
-          stdio: 'inherit'
-        })
-          .on('close', code => process.exit(code))
-          .on('error', spawnError => console.error(spawnError));
-      }
+      console.log('Starting Main Process...');
+      spawn('npm', ['run', 'start-main-dev'], {
+        shell: true,
+        env: process.env,
+        stdio: 'inherit'
+      })
+        .on('close', code => process.exit(code))
+        .on('error', spawnError => console.error(spawnError));
     }
   }
 });

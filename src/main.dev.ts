@@ -28,28 +28,37 @@ if (
 }
 
 const installExtensions = async () => {
-  /* DEV: load redux devtools */
-  // session.defaultSession.loadExtension(
-  //   path.join(
-  //     os.homedir(),
-  //     '/.config/google-chrome/Default/Extensions/lmhkpmbekcpmknklioeibfkpmmfibljd/2.17.0_0'
-  //   )
-  // );
-  /* DEV: load react devtools */
-  session.defaultSession.loadExtension(
-    path.join(
-      os.homedir(),
-      '/.config/google-chrome/Default/Extensions/fmkadmapgofadopljbjfkapdkoienihi/4.7.0_2'
-    )
-  );
-  // const installer = require('electron-devtools-installer');
-  // const forceDownload = true;
-  // const extensions = ['REACT_DEVELOPER_TOOLS', 'REDUX_DEVTOOLS'];
+  const installer = require('electron-devtools-installer');
+  const forceDownload = !!process.env.UPGRADE_EXTENSIONS;
+  const extensions = ['REACT_DEVELOPER_TOOLS', 'REDUX_DEVTOOLS'];
 
-  // return Promise.all(
-  //   extensions.map(name => installer.default(installer[name], forceDownload))
-  // ).catch(console.log);
+  return Promise.all(
+    extensions.map(name => installer.default(installer[name], forceDownload))
+  ).catch(console.log);
 };
+// const installExtensions = async () => {
+//   /* DEV: load redux devtools */
+//   // session.defaultSession.loadExtension(
+//   //   path.join(
+//   //     os.homedir(),
+//   //     '/.config/google-chrome/Default/Extensions/lmhkpmbekcpmknklioeibfkpmmfibljd/2.17.0_0'
+//   //   )
+//   // );
+//   /* DEV: load react devtools */
+//   session.defaultSession.loadExtension(
+//     path.join(
+//       os.homedir(),
+//       '/.config/google-chrome/Default/Extensions/fmkadmapgofadopljbjfkapdkoienihi/4.7.0_2'
+//     )
+//   );
+// const installer = require('electron-devtools-installer');
+// const forceDownload = true;
+// const extensions = ['REACT_DEVELOPER_TOOLS', 'REDUX_DEVTOOLS'];
+
+// return Promise.all(
+//   extensions.map(name => installer.default(installer[name], forceDownload))
+// ).catch(console.log);
+// };
 
 const createWindow = async () => {
   if (
@@ -74,8 +83,8 @@ const createWindow = async () => {
         }
   });
 
+  // mainWindow.loadURL('http://localhost:3000');
   mainWindow.loadURL(`file://${__dirname}/app.html`);
-
   mainWindow.webContents.on('did-finish-load', () => {
     if (!mainWindow) {
       throw new Error('"mainWindow" is not defined');

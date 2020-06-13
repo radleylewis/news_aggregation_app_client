@@ -5,7 +5,7 @@
   "scripts": {
     "electron-rebuild": "electron-rebuild --parallel --force --types prod,dev,optional --module-dir src",
     "dev": "cross-env START_HOT=1 node -r @babel/register ./scripts/ports.check.js && cross-env START_HOT=1 yarn start",
-    "start": "cross-env NODE_ENV=development webpack-dev-server --config configs/webpack.development.config.babel.js",
+    "start": "cross-env START_HOT=1 NODE_ENV=development webpack-dev-server --config configs/webpack.development.config.babel.js",
     "start-main-dev": "cross-env START_HOT=1 NODE_ENV=development electron -r ./scripts/babel.register.js ./src/main.dev.ts"
   },
   "repository": {
