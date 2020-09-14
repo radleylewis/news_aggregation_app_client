@@ -1,6 +1,6 @@
 # News Aggregator
 <p align="center">
-<img alt="screenshots" src="https://github.com/radleylewis/news_aggregation_app_client/blob/master/readme_assets/login.png?raw=true"/>
+<img alt="screenshots" src="https://github.com/radleylewis/news_aggregation_app_client/blob/feature/original_app/readme_assets/login.png?raw=true"/>
 <img alt="screenshots" src="https://github.com/radleylewis/news_aggregation_app_client/blob/master/readme_assets/frontPage.png?raw=true"/>
 <img alt="screenshots" src="https://github.com/radleylewis/news_aggregation_app_client/blob/master/readme_assets/newsSources.png?raw=true"/>
 </p>
